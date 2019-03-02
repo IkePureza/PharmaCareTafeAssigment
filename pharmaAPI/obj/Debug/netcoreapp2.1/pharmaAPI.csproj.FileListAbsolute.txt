@@ -1,0 +1,14 @@
+/Users/babieike/pharmacarecore/pharmaAPI/bin/Debug/netcoreapp2.1/pharmaAPI.deps.json
+/Users/babieike/pharmacarecore/pharmaAPI/bin/Debug/netcoreapp2.1/pharmaAPI.runtimeconfig.json
+/Users/babieike/pharmacarecore/pharmaAPI/bin/Debug/netcoreapp2.1/pharmaAPI.runtimeconfig.dev.json
+/Users/babieike/pharmacarecore/pharmaAPI/bin/Debug/netcoreapp2.1/pharmaAPI.dll
+/Users/babieike/pharmacarecore/pharmaAPI/bin/Debug/netcoreapp2.1/pharmaAPI.pdb
+/Users/babieike/pharmacarecore/pharmaAPI/obj/Debug/netcoreapp2.1/pharmaAPI.csprojAssemblyReference.cache
+/Users/babieike/pharmacarecore/pharmaAPI/obj/Debug/netcoreapp2.1/pharmaAPI.csproj.CoreCompileInputs.cache
+/Users/babieike/pharmacarecore/pharmaAPI/obj/Debug/netcoreapp2.1/pharmaAPI.RazorAssemblyInfo.cache
+/Users/babieike/pharmacarecore/pharmaAPI/obj/Debug/netcoreapp2.1/pharmaAPI.RazorAssemblyInfo.cs
+/Users/babieike/pharmacarecore/pharmaAPI/obj/Debug/netcoreapp2.1/pharmaAPI.AssemblyInfoInputs.cache
+/Users/babieike/pharmacarecore/pharmaAPI/obj/Debug/netcoreapp2.1/pharmaAPI.AssemblyInfo.cs
+/Users/babieike/pharmacarecore/pharmaAPI/obj/Debug/netcoreapp2.1/pharmaAPI.RazorTargetAssemblyInfo.cache
+/Users/babieike/pharmacarecore/pharmaAPI/obj/Debug/netcoreapp2.1/pharmaAPI.dll
+/Users/babieike/pharmacarecore/pharmaAPI/obj/Debug/netcoreapp2.1/pharmaAPI.pdb
