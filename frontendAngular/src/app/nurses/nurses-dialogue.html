@@ -1,0 +1,53 @@
+<h1 mat-dialog-title>Prescription Details</h1>
+<div mat-dialog-content>
+  <mat-tab-group>
+
+    <div *ngIf="detailsData[0].forward[0] == undefined">
+      <p>There are no details in this Prescription</p>
+    </div>
+    <div *ngIf="detailsData[0].forward[0];else other_content">
+      <mat-tab label="First Details">
+        <div id="content1">
+          <p>Drug Name: {{detailsData[0].forward[0].content.name}} </p>
+          <p>Drug Form: {{detailsData[0].forward[0].content.drugForm}} </p>
+          <p>Drug Dose: {{detailsData[0].forward[0].content.drugDose}}</p>
+          <p>Start taking at: {{detailsData[0].forward[0].content.firstTime}}</p>
+          <p>Stop taking at: {{detailsData[0].forward[0].content.lastTime}}</p>
+          <p>Times per day: {{detailsData[0].forward[0].content.timesPerDay}}</p>
+        </div>
+        <mat-dialog-actions style="float: right;">
+          <button mat-flat-button (click)="printLabel1()" style="margin-bottom: 20px;" color="primary">Print Label</button>
+
+        </mat-dialog-actions>
+      </mat-tab>
+    </div>
+    <ng-template #other_content>
+      <p>There are no details in this Prescription</p>
+    </ng-template>
+    <mat-tab label="Second Details">
+      <p>Drug Name: {{detailsData[0].forward[1].content.name}} </p>
+      <p>Drug Form: {{detailsData[0].forward[1].content.drugForm}} </p>
+      <p>Drug Dose: {{detailsData[0].forward[1].content.drugDose}}</p>
+      <p>Start taking at: {{detailsData[0].forward[1].content.firstTime}}</p>
+      <p>Stop taking at: {{detailsData[0].forward[1].content.lastTime}}</p>
+      <p>Times per day: {{detailsData[0].forward[1].content.timesPerDay}}</p>
+      <mat-dialog-actions style="float: right;">
+        <button mat-flat-button (click)="printLabel2()" style="margin-bottom: 20px;" color="primary">Print Label</button>
+      </mat-dialog-actions>
+    </mat-tab>
+    <div *ngIf="detailsData[0].forward[2]" id="detailsPdfContent">
+      <mat-tab label="Third Details">
+        <p>Drug Name: {{detailsData[0].forward[2].content.name}} </p>
+        <p>Drug Form: {{detailsData[0].forward[2].content.drugForm}} </p>
+        <p>Drug Dose: {{detailsData[0].forward[2].content.drugDose}}</p>
+        <p>Start taking at: {{detailsData[0].forward[2].content.firstTime}}</p>
+        <p>Stop taking at: {{detailsData[0].forward[2].content.lastTime}}</p>
+        <p>Times per day: {{detailsData[0].forward[2].content.timesPerDay}}</p>
+        <mat-dialog-actions style="float: right;">
+          <button mat-flat-button (click)="printLabel3()" style="margin-bottom: 20px;" color="primary">Print Label</button>
+        </mat-dialog-actions>
+      </mat-tab>
+    </div>
+  </mat-tab-group>
+</div>
+

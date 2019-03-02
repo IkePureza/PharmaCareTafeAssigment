@@ -1,0 +1,112 @@
+<mat-card class="component">
+  <div *ngIf="updating; else other">
+    <form>
+      <mat-form-field class="example-full-width">
+        <textarea matInput [(ngModel)]="det" name="det" placeholder="Details"></textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <textarea matInput [(ngModel)]="status" name="status" placeholder="Status"></textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <textarea matInput [(ngModel)]="indoor" name="indoor" placeholder="Indoor"></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+  <ng-template #other>
+    <mat-card-content>
+      <p>Prescription ID: {{prescription.prescriptionID}}</p>
+      <p>{{prescription.prescriptionDetails}}</p>
+      <p>Issued: {{prescription.prescriptionDate}}</p>
+      <p>Status: {{prescription.status}}</p>
+    </mat-card-content>
+  </ng-template>
+  <mat-card-actions>
+    <button mat-raised-button (click)="update(prescription.prescriptionID)">Update</button>
+    <button mat-raised-button (click)="delete(prescription.prescriptionID)" >Delete</button>
+    <button mat-raised-button (click)="newDetail(prescription.prescriptionID)" >New Detail</button>
+    <button mat-raised-button (click)="checkDrugs()" >Check drug combinantion</button>
+  </mat-card-actions>
+  <div *ngIf="message">
+    <p class="message">{{message}}</p>
+  </div>
+  <div *ngIf="creating; else another">
+    <mat-card>
+    <form>
+      <mat-form-field>
+        <mat-select placeholder="Drug">
+          <mat-option *ngFor="let drug of drugs" [value]="drug.drugID" (click)="setDrugID(drug.drugID)">
+            {{drug.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="drugForm" name="drugForm" placeholder="Form">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="drugDose" name="drugDose" placeholder="Dose">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="firstTime" name="firstTime" placeholder="First Time">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="lastTime" name="lastTime" placeholder="Last Time">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="timesPerDay" name="timesPerDay" placeholder="Times per day">
+      </mat-form-field>
+    </form>
+  </mat-card>
+  </div>
+  <ng-template #another>
+
+  </ng-template>
+  <table>
+    <tr>
+      <td>
+        Drug
+      </td>
+      <td>
+        Form
+      </td>
+      <td>
+        Dose
+      </td>
+      <td>
+        First Time
+      </td>
+      <td>
+        Last time
+      </td>
+      <td>
+        Times per day
+      </td>
+      <td>
+        Action
+      </td>
+    </tr>
+    <tr *ngFor="let detail of details">
+      <td>
+        {{detail.name}}
+      </td>
+      <td>
+        {{detail.drugForm}}
+      </td>
+      <td>
+        {{detail.drugDose}}
+      </td>
+      <td>
+        {{detail.firstTime}}
+      </td>
+      <td>
+        {{detail.lastTime}}
+      </td>
+      <td>
+        {{detail.timesPerDay}}
+      </td>
+      <td>
+        <button mat-raised-button (click)="deleteDetail(detail.detailID)">Delete</button>
+      </td>
+    </tr>
+  </table>
+
+</mat-card>

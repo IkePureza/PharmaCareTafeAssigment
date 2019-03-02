@@ -1,0 +1,78 @@
+<mat-toolbar color="primary">
+
+    <div class="full-width">
+
+      <div *ngIf="state; else initial">
+
+        <span class="title"> Welcome {{state?.firstName}}</span>
+        <div class="nav-btns">
+          <span class="example-fill-remaining-space"></span>
+          <button class="dropdown-icon" mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon matBadge="15" matBadgeColor="warn">announcement</mat-icon>
+              <span>Notification</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>lock</mat-icon>
+              <span>Change settings</span>
+            </button>
+            <button mat-menu-item (click)="Logout()">
+              <mat-icon>reply</mat-icon>
+              <span>Logout</span>
+            </button>
+          </mat-menu>
+        </div>
+
+        <div class="pharma-btns">
+          <div *ngIf="state.jobTitle == 2">
+            <div class="nav-btns">
+                <button mat-button (click)="toPrescription()">View Prescriptios</button>
+                <button mat-button (click)="toSchedule()">Distribution Schedule</button>
+                <button mat-button (click)="toPreparation()">Preparation List</button>
+                <button mat-button (click)="toStation()">List for nursing station</button>
+            </div>
+          </div>
+          <div *ngIf="state.jobTitle == 4">
+            <div class="nav-btns">
+                <button mat-button (click)="toPrescriptionN()">View Prescriptions</button>
+                <!-- <button mat-button (click)="toSchedule()">Distribution Schedule</button>
+                <button mat-button (click)="toPreparation()">Preparation List</button> -->
+                <button mat-button (click)="toStationN()">List for nursing station</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <ng-template #initial>
+      <span class="example-fill-remaining-space"></span>
+      <span class="title">Pharma Care</span>
+      <div class="nav-btns">
+        <button mat-button (click)="updateNav()">About</button>
+        <button mat-button (click)="nav-btns2()">Contact</button>
+        <button class="dropdown-icon" mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon matBadge="15" matBadgeColor="warn">announcement</mat-icon>
+            <span>Notification</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>lock</mat-icon>
+            <span>Change settings</span>
+          </button>
+          <button mat-menu-item (click)="Logout()">
+            <mat-icon>reply</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </div>
+    </ng-template>
+
+</mat-toolbar>

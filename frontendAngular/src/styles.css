@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import '~@angular/material/prebuilt-themes/purple-green.css';  */
+
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+      Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+body{
+  background: #303030;
+}
+  
+.example-card {
+  max-width: 400px;
+  margin-left: 35%;
+  margin-top: 10%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+  
+
+.prescription-card[_ngcontent-c6] {
+  max-width: auto;
+  min-height: 600px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+  margin: 10px 0px 0px 0px !important; 
+}
+
+.mat-raised-button:not([class*="mat-elevation-z"]) {
+  margin-right: 18px; 
+}

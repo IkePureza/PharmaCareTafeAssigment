@@ -1,0 +1,72 @@
+<mat-card class="prescription-card">
+  <mat-card-header>
+    <mat-card-title>Nursing station</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+      <mat-form-field>
+          <input matInput (keyup.enter)="applyFilter($event.target.value)" placeholder="Search for Nurse Stations" [matAutocomplete]="auto">
+        </mat-form-field>
+
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option [value]="3267">3267</mat-option>
+            <mat-option [value]="9041">9041</mat-option>
+            <mat-option [value]="5671">5671</mat-option>
+          </mat-autocomplete>
+
+    <div id="table">
+      <table mat-table [dataSource]="dataSource" matSort matSortActive="Ward ID" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="Ward ID">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Ward ID. </th>
+          <td mat-cell *matCellDef="let patientsInfo"> {{patientsInfo.wardID}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="Room ID">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Room ID </th>
+          <td mat-cell *matCellDef="let patientsInfo"> {{patientsInfo.roomID}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="First Name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+          <td mat-cell *matCellDef="let patientsInfo"> {{patientsInfo.firstName}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Last Name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+          <td mat-cell *matCellDef="let patientsInfo"> {{patientsInfo.lastName}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="View">
+          <th mat-header-cell *matHeaderCellDef> </th>
+          <td mat-cell *matCellDef="let patientsInfo">
+            <button mat-icon-button color="primary" (click)="View(patientsInfo.patientID)">
+              <mat-icon>pageview</mat-icon>
+            </button></td>
+        </ng-container>
+
+
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+
+    <button mat-flat-button class="mat-mini" (click)="printPrescription()" style="background: green;">Print</button>
+
+
+
+
+  </mat-card-content>
+</mat-card>

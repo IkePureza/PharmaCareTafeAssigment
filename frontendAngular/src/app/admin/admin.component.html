@@ -1,0 +1,121 @@
+
+<mat-card class="admin-card-title">
+  <mat-card-content>
+    <div class="mat-card-header-text">
+      <h1 class="fromCenter">Maintenance Page</h1>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<div class="admin-card-container">
+
+  <mat-tab-group mat-align-tabs="center">
+
+    <mat-tab label="Staff">
+      <mat-card class="admin-card right-card">
+        <mat-card-content>
+          <div class="main-container">
+            <div class="card-title">
+              <mat-card-title>Staff Details</mat-card-title>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="left-container">
+              <mat-form-field>
+                <input matInput [(ngModel)]="staffID" placeholder="Staff ID">
+              </mat-form-field>
+              <div class="example-button-row">
+                <button class="get" mat-raised-button (click)="fetchStaff()">Get Staff</button>
+                <button class="add" mat-raised-button (click)="insertStaff()">New Staff</button>
+                <button class="update" mat-raised-button (click)="updateStaff()">Update Staff</button>
+                <button class="delete" mat-raised-button (click)="removeStaff()">Delete Staff</button>
+              </div>
+            </div>
+            <div class="main-container">
+              <mat-divider></mat-divider>
+              <div class="right-container results">
+                <!--<div *ngIf="staffID" class="details">-->
+                <div class="holder">
+                  <div class="labels">First Name:</div>
+                  <div class="input-wrapper"><input matInput class="input-search" [(ngModel)]=" sfirstName"> </div>
+                </div>
+                <div class="holder">
+                  <div class="labels">Last Name:</div>
+                  <div class="input-wrapper"><input matInput class="input-search" [(ngModel)]=" slastName"> </div>
+                </div>
+                <div class="holder">
+                  <div class="labels">Username:</div>
+                  <div class="input-wrapper"><input matInput class="input-search" [(ngModel)]=" susername"> </div>
+                </div>
+                <div class="holder">
+                  <div class="labels">Password:</div>
+                  <div class="input-wrapper"><input matInput class="input-search" [(ngModel)]=" spassword"> </div>
+                </div>
+                <div class="holder">
+                  <div class="labels">Job Title:</div>
+                  <div class="input-wrapper"><input matInput class="input-search" [(ngModel)]=" sjobTitle"> </div>
+                </div>
+                <div class="holder">
+                  <div class="labels">WardID:</div>
+                  <div class="input-wrapper"><input matInput class="input-search" [(ngModel)]=" swardID"> </div>
+                </div>
+                <div class="holder">
+                  <div class="labels">RoomID:</div>
+                  <div class="input-wrapper"><input matInput class="input-search" [(ngModel)]=" sroomID"> </div>
+                </div>
+                <!--</div>-->
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+
+    <mat-tab label="Patient">
+      <mat-card class="admin-card left-card">
+        <mat-card-content>
+
+          <div class="main-container">
+            <div class="card-title">
+              <mat-card-title>Patient Details</mat-card-title>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="left-container">
+              <mat-form-field>
+                <input matInput [(ngModel)]="patientID" placeholder="Patient ID">
+              </mat-form-field>
+              <div class="example-button-row">
+                <button class="get" mat-raised-button (click)="fetchPatient()">Get Patient</button>
+                <button class="add" mat-raised-button (click)="insertPatient()">Add Patient</button>
+                <button class="update" mat-raised-button (click)="updatePatient()">Update Patient</button>
+                <button class="delete" mat-raised-button (click)="removePatient()">Delete Patient</button>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="right-container results">
+              <!--<div *ngIf="patientID" class="details">-->
+              <div class="holder">
+                <div class="labels">First Name:</div>
+                <div class="input-wrapper"><input matInput class="input-search" [(ngModel)]=" firstName"> </div>
+              </div>
+              <div class="holder">
+                <div class="labels">Last Name:</div>
+                <div class="input-wrapper"><input matInput class="input-search" [(ngModel)]=" lastName"> </div>
+              </div>
+              <div class="holder">
+                <div class="labels">WardID:</div>
+                <div class="input-wrapper"><input matInput class="input-search" [(ngModel)]=" wardID"> </div>
+              </div>
+              <div class="holder">
+                <div class="labels">RoomID:</div>
+                <div class="input-wrapper"><input matInput class="input-search" [(ngModel)]=" roomID"> </div>
+              </div>
+              <!--</div>-->
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+
+  </mat-tab-group>
+
+</div>

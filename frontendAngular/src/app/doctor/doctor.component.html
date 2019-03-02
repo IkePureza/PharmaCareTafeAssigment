@@ -1,0 +1,46 @@
+<div class="doctorBox">
+  <mat-card>
+    <mat-form-field class="example-form-field">
+      <input matInput [(ngModel)]="patientID" name="patientID" type="text" placeholder="Patient ID" >
+    </mat-form-field>
+    <button mat-raised-button (click)="fetchPatient()">Get Patient</button>
+  </mat-card>
+  <div class="main">
+    <div class="patientInfo">
+      <mat-card *ngIf='patient'>
+        <mat-card-title>
+          <p>Name: {{patient.firstName}} {{patient.lastName}}</p>
+        </mat-card-title>
+        <mat-card-subtitle>
+          <p>Patient ID: {{patient.patientID}}</p>
+        </mat-card-subtitle>
+        <mat-card-content>
+          <p>Ward ID: {{patient.wardID}}, Room ID: {{patient.roomID}}</p>
+        </mat-card-content>
+        <div *ngIf="creating; else other">
+          <form>
+            <mat-form-field class="example-full-width">
+              <input matInput name="staffID" placeholder="Staff ID" [(ngModel)]="staffID">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <textarea matInput name="prescriptionDetails" placeholder="Details" [(ngModel)]="prescriptionDetails"></textarea>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput name="indoor" placeholder="Indoor" [(ngModel)]="indoor">
+            </mat-form-field>
+          </form>
+        </div>
+        <ng-template #other>
+
+        </ng-template>
+        <mat-card-actions>
+          <button mat-button (click)="newPrescription()">New Prescription</button>
+        </mat-card-actions>
+      </mat-card>
+        <app-card class="prescriptions" *ngFor="let prescription of prescriptions" [prescription]="prescription" (detail)="onDetail($event)"></app-card>
+    </div>
+    <div class="other" *ngIf="details">
+        <app-expanded-card [prescription]="prescription" [details]="details"></app-expanded-card>
+    </div>
+  </div>
+</div>

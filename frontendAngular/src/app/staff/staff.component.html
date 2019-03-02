@@ -1,0 +1,119 @@
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Enter Patient General Information
+      </mat-panel-title>
+      <mat-panel-description>
+          {{panelOpenState ? 'Enter patient details' : ''}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+            <mat-form-field class="example-full-width">
+            <input matInput class="logininput" placeholder="First Name" [(ngModel)]="firstName" name="firstName" required>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput class="logininput" placeholder="Last Name" [(ngModel)]="lastName" name="lastName" required>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput class="logininput" placeholder="Ward" [(ngModel)]="ward" name="ward" required>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput class="logininput" placeholder="Room" [(ngModel)]="room" name="room" required>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+    <button mat-raised-button (click)="enterPatientsDetails()" color="primary">Enter</button>
+  </mat-expansion-panel>
+
+   <mat-expansion-panel >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Print OPD Prescription
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field>
+            <input matInput placeholder="Patient's First Name" [(ngModel)]="fName" name="firstName" required>
+          </mat-form-field>
+          
+          <mat-form-field>
+            <input matInput placeholder="Patient's Last Name" [(ngModel)]="lName" name="lastName" required>
+          </mat-form-field>
+          <button mat-raised-button (click)="printOPD()" color="primary">Search</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Prescription ID</p>
+        </td>
+        <td>
+          <input type="text" name="prescriptionID" id="pID" size="20" autocomplete="off" readonly="readonly" value={{prescriptionID}} >
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>To Fill</p>
+        </td>
+        <td>
+          <input type="text" name="toFill" id="toFill" size="20" autocomplete="off" readonly="readonly" value={{toFill}}>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Filled and Dispatched</p>
+        </td>
+        <td>
+          <input type="text" name="fillAndDis" id="fillAndDis" size="20" autocomplete="off" readonly="readonly" value={{filled}}>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Date Dispatched</p>
+        </td>
+        <td>
+          <input type="text" name="date" id="date" size="20" autocomplete="off" readonly="readonly" value={{date}}>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Time Dispatched</p>
+        </td>
+        <td>
+          <input type="text" name="time" id="time" size="20" autocomplete="off" readonly="readonly" value={{time}}>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Indoor Emergency</p>
+        </td>
+        <td>
+          <input type="text" name="emergency" id="emergency" size="20" autocomplete="off" readonly="readonly" value={{indoor}}>
+        </td>
+      </tr>
+      <tr>
+        <button mat-raised-button (click)="Print()" color="primary">Print</button>
+      </tr>
+    </table> 
+  </mat-expansion-panel>
+</mat-accordion>

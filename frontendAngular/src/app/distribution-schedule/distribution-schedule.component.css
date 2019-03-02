@@ -1,0 +1,53 @@
+.date-middle {
+  width: 250px;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 55%;
+  transform: translateY(-45%);
+}
+
+.toggleable {
+  position: fixed;
+  top: 87px;
+  right: 10px;
+  border-color: #00e5ff;
+}
+
+.prescription-card {
+  max-width: auto;
+  min-height: 600px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-flat-button.mat-mini {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  min-height: 20px;
+  vertical-align: top;
+  font-size: 10px;
+  padding: 0 0;
+  margin: 0;
+  color: white;
+
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.example-button-row button,
+.example-button-row a {
+  float: right;
+  margin-right: 8px;
+  margin-top: 10px;
+}
